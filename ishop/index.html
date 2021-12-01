@@ -3,16 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <title>iShop</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" type="text/css" href="reset.css">
 </head>
 <body>
 
-    <div id="content"></div>
+<header>
+    <a href="/" class="logo">
+        <span>i</span>Bulochka
+    </a>
 
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <input type="text" id="search" placeholder="Поиск товаров"/>
 
-    <script src="index.js"></script>
+    <a href="/" class="cart">
+        Корзина
+        <span>0</span>
+    </a>
+</header>
+<div class="container">
+    <aside>
+        <ul>
+            <li>
+                <a href="#">
+                    Сладкие пончики
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Прелестные ватрушечки
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Суперские крендельки
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Несравненные круассаны
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Булки хлеба
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Ржаное недоразумение
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Разное
+                </a>
+            </li>
+        </ul>
+
+        <p class="copy">
+            @kenobov
+        </p>
+    </aside>
+    <div id="shop"></div>
+</div>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="src/ShopComponent.css">
+
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+<script src="src/NoData.js"></script>
+<script src="src/ShopItem.js"></script>
+<script src="src/ShopComponent.js"></script>
+
+<script src="data.js"></script>
+
+<script>
+    const shopName = 'Интернет-магазин iBulochka';
+
+    ReactDOM.render(
+        React.createElement(ShopComponent, {shopName, shopItems: data}),
+        document.querySelector('#shop')
+    );
+</script>
+
 
 </body>
 </html>

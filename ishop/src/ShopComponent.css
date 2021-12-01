@@ -1,0 +1,103 @@
+.ShopComponentContent .ShopName {
+    font-size: 32px;
+}
+.ShopComponentContent .ShopDescription {
+    font-size: 12px;
+    padding: 5px 0;
+}
+.ShopComponentContent .ShopHead {
+    margin: 0 5px 20px;
+}
+.ShopComponentContent .ShopItems {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ShopComponentContent .ShopItems .ShopItem {
+    background: #fff;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    flex-grow: 1;
+    flex-basis: calc(33% - 40px);
+    max-width: calc(33% - 40px);
+    position: relative;
+    transition: all .5s ease;
+}
+.ShopComponentContent .ShopItems .ShopItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+    transition: all .5s ease;
+}
+
+.ShopItem .ShopItemImage {
+    display: flex;
+    height: 250px;
+    align-items: center;
+    justify-content: space-around;
+}
+.ShopItem .ShopItemBadges {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+}
+.ShopItem .ShopItemStore {
+    text-align: center;
+    font-size: 10px;
+    color: #8b8b8b;
+    margin-top: 8px;
+}
+.ShopItem .ShopItemBadges .ShopBadge {
+    display: inline-block;
+    border-radius: 8px;
+    padding: 2px 8px;
+    font-size: 11px;
+    color: #fff;
+    margin-right: 5px;
+}
+.ShopItem .ShopItemBadges .ShopBadge.ShopBadgeNew {
+    background-color: #3580dc;
+}
+.ShopItem .ShopItemBadges .ShopBadge.ShopBadgePopular {
+    background-color: #dc3545;
+}
+.ShopItem .ShopItemName {
+    text-decoration: none;
+    color: #3580dc;
+}
+.ShopItem .ShopItemName h3 {
+    font-weight: 300;
+    font-size: 1.2em;
+    margin:  5px 0;
+    text-align: center;
+}
+.ShopItem .ShopItemName:hover {
+    text-decoration: underline;
+}
+.ShopItem .ShopItemFooter {
+    display: flex;
+    margin: 20px 0 0;
+    align-items: center;
+}
+.ShopItem .ShopItemFooter .ShopItemPrice,
+.ShopItem .ShopItemFooter .ShopItemBuy {
+    flex: 50%;
+    text-align: center;
+}
+.ShopItem .ShopItemFooter .ShopItemBtn {
+    margin-left: 5px;
+    border: 1px solid #d0d0d0;
+    color: #c7c7c7;
+    border-radius: 10px;
+    background: transparent;
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+.ShopItem .ShopItemFooter .ShopItemBtn:hover {
+    border-color: #dc3545;
+    color: #dc3545;
+    transition: all .5s ease;
+}
