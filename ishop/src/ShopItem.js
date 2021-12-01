@@ -20,10 +20,10 @@ const ShopItem = React.createClass({
         const {id, name, img, price, store, rating, isNew, isPopular} = this.props.item;
 
         if(isNew){
-            htmlBadges.push(React.DOM.div({className: "ShopBadge ShopBadgeNew"}, "Новинка"));
+            htmlBadges.push(React.DOM.div({key: "BadgeNew"+id, className: "ShopBadge ShopBadgeNew"}, "Новинка"));
         }
         if(isPopular){
-            htmlBadges.push(React.DOM.div({className: "ShopBadge ShopBadgePopular"}, "Хит"));
+            htmlBadges.push(React.DOM.div({key: "BadgePopular"+id, className: "ShopBadge ShopBadgePopular"}, "Хит"));
         }
 
         return React.DOM.div({className: "ShopItem"},
