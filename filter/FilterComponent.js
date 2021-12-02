@@ -15,21 +15,15 @@ const FilterComponent = React.createClass({
     },
 
     cbOnCheckboxChange: function (e) {
-        const checkbox = e.target.checked;
-        this.editList({checkbox});
+        this.editList({checkbox: e.target.checked});
     },
 
     cbOnFilterChange: function (e) {
-        const filter = e.target.value;
-        this.editList({filter});
+        this.editList({filter: e.target.value});
     },
 
     cbClear: function () {
-        this.setState({
-            list: this.props.data,
-            filter: '',
-            checkbox: false
-        })
+        this.editList({filter:'', checkbox:false});
     },
 
     editList: function ({filter = this.state.filter, checkbox = this.state.checkbox}) {
@@ -37,12 +31,11 @@ const FilterComponent = React.createClass({
         if(filter.length > 0) list = list.filter(t => t.includes(filter));
         if(checkbox) list.sort();
 
-        console.log({
-            filter, checkbox, list
-        })
         this.setState({
             filter, checkbox, list
         });
+
+        console.log({filter, checkbox, list})
     },
 
     render: function () {
