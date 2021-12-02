@@ -34,7 +34,7 @@ const FilterComponent = React.createClass({
 
     editList: function ({filter = this.state.filter, checkbox = this.state.checkbox}) {
         let list = this.props.data.map(v=>v);
-        if(filter.length > 0) list.filter(t => t.includes(filter));
+        if(filter.length > 0) list = list.filter(t => t.includes(filter));
         if(checkbox) list.sort();
 
         console.log({
