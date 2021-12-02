@@ -16,21 +16,20 @@ const FilterComponent = React.createClass({
 
     cbOnCheckboxChange: function (e) {
         const isChecked = e.target.checked;
-        this.setState( prevState => {
-            return {
-                checkbox: isChecked,
-                list: prevState.list.sort()
-            }
+        const newList = this.props.data.map(v=>v).sort();
+        this.setState({
+            checkbox: isChecked,
+            list: newList
         });
     },
 
     cbOnFilterChange: function (e) {
         const value = e.target.value;
-        this.setState( prevState => {
-            return {
-                filter: value,
-                list: prevState.list.filter(t => t.includes(value))
-            }
+        const newList = this.props.data.map(v=>v).filter(t => t.includes(value));
+        console.log(newList)
+        this.setState({
+            filter: value,
+            list: newList
         });
     },
 
