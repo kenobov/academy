@@ -1,0 +1,30 @@
+.ShopItem.marked {
+    background: #ffbaba;
+}
+
+.ShopItem:not(.marked):hover {
+    cursor: pointer;
+    background: #e8edff;
+}
+
+.ShopItem .remove {
+    margin-left: 5px;
+    border: 1px solid #c7c7c7;
+    color: #c7c7c7;
+    border-radius: 10px;
+    background: transparent;
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+.ShopItem.marked .remove {
+    color: #999;
+    border-color: #999;
+}
+.ShopItem .remove:hover {
+    border-color: #dc3545;
+    color: #dc3545;
+    transition: all .5s ease;
+}
