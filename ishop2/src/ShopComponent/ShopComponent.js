@@ -20,8 +20,13 @@ const ShopComponent = React.createClass({
 
     getInitialState: function () {
         return {
-            list: this.props.shopItems
+            list: this.props.shopItems,
+            selected: 0
         }
+    },
+
+    cbSelectItem: function (selected) {
+        this.setState({selected})
     },
 
     cbRemoveItem: function (id) {
@@ -38,7 +43,13 @@ const ShopComponent = React.createClass({
         if(this.state.list.length > 0){
             this.state.list.forEach(item => {
                htmlShopItems.push(
-                   React.createElement(ShopItem, {key: 'shopItem'+item.id, item, onRemove: this.cbRemoveItem})
+                   React.createElement(ShopItem, {
+                       key: 'shopItem'+item.id,
+                       item,
+                       isSelected: +item.id === +this.state.selected,
+                       onSelect: this.cbSelectItem,
+                       onRemove: this.cbRemoveItem
+                   })
                )
             });
         }else{

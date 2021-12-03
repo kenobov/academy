@@ -53,9 +53,6 @@ const FilterComponent = React.createClass({
             React.DOM.ul({className: 'list'},
                 listHTML
             ),
-            React.DOM.div({className: 'list'},
-                this.state.filter
-            ),
         );
     }
 

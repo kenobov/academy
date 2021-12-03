@@ -13,38 +13,28 @@ const ShopItem = React.createClass({
             isNew: React.PropTypes.bool,
             isPopular: React.PropTypes.bool,
         }),
-        onRemove: React.PropTypes.func
+        isSelected: React.PropTypes.bool,
+        onSelect: React.PropTypes.func,
+        onRemove: React.PropTypes.func,
     },
 
-    getInitialState: function() {
-        return {
-            item: this.props.item,
-            isMarked: false
-        }
-    },
-
-    cbSetMerked: function() {
-        this.setState(prevState => {
-            return {
-                isMarked: !prevState.isMarked
-            }
-        })
+    cbMark: function () {
+        this.props.onSelect(this.props.item.id);
     },
 
     cbRemove: function (e) {
         e.stopPropagation();
-        const {id, name} = this.state.item;
+        const {id, name} = this.props.item;
         if(confirm(`Вы действительно хотите удалить товар "${name}"?`)) this.props.onRemove(id);
     },
 
     render: function() {
 
-        const {isMarked, item} = this.state;
-        const {id, name, img, price, store, isNew, isPopular} = item;
+        const {id, name, img, price, store, isNew, isPopular} = this.props.item;
 
         return React.DOM.tr({
-                    className: `ShopItem ${isMarked ? 'marked' : null }`,
-                    onClick: this.cbSetMerked
+                    className: `ShopItem ${this.props.isSelected ? 'marked' : null }`,
+                    onClick: this.cbMark
             },
             React.DOM.td(null, id),
             React.DOM.td(null, name),
