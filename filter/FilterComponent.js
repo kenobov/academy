@@ -34,8 +34,6 @@ const FilterComponent = React.createClass({
         this.setState({
             filter, checkbox, list
         });
-
-        console.log({filter, checkbox, list})
     },
 
     render: function () {
@@ -43,7 +41,7 @@ const FilterComponent = React.createClass({
         const {filter, checkbox, list} = this.state;
 
         let i = 0, listHTML = list.length > 0
-            ? data.map(el => React.DOM.li({key: i++}, el))
+            ? list.map(el => React.DOM.li({key: i++}, el))
             : null;
 
         return React.DOM.div({className: 'container'},
