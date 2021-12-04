@@ -1,0 +1,100 @@
+.form {
+  width: calc(100% - 60px);
+  padding: 20px;
+
+  h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  label {
+    color: #777;
+    display: block;
+    margin-bottom: 5px;
+    padding-left: 11px;
+    text-align: left;
+    font-size: 13px;
+  }
+}
+
+.form-control {
+  width: 100%;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  position: relative;
+
+  input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 14px;
+
+    &:focus {
+      outline: 0;
+      border-color: #777777;
+    }
+  }
+
+  &.success input {
+    border-color: #2ecc71;
+  }
+  &.error {
+    input {
+      border-color: #e74c3c;
+    }
+
+    small {
+      visibility: visible;
+    }
+  }
+
+  small {
+    color: #e74c3c;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+  }
+
+  button {
+    cursor: pointer;
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    color: white;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+.half-control {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+
+  .half {
+    flex:50%;
+    text-align: left;
+
+    label {
+      display: inline-block;
+      padding-right: 10px;
+      cursor: pointer;
+    }
+
+    .btn {
+      width: calc(100% - 10px);
+      margin: 0 auto;
+
+      &.cancel {
+        border-color: #c6c6c6;
+        color: #c6c6c6;
+      }
+    }
+  }
+}

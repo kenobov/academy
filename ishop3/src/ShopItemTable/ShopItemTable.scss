@@ -1,0 +1,44 @@
+.ShopItem {
+
+  &.marked {
+    background: #ffbaba;
+
+    .remove, .edit {
+      color: #999;
+      border-color: #999;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:not(.marked):hover {
+    background: #e8edff;
+  }
+
+  .remove, .edit {
+    margin-left: 5px;
+    border: 1px solid #c7c7c7;
+    color: #c7c7c7;
+    border-radius: 10px;
+    background: transparent;
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+  }
+
+  .edit:hover {
+    border-color: #358edc;
+    color: #358edc;
+    transition: all .5s ease;
+  }
+
+  .remove:hover {
+    border-color: #dc3545;
+    color: #dc3545;
+    transition: all .5s ease;
+  }
+
+}
