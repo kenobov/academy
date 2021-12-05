@@ -1,12 +1,15 @@
 import React from 'react';
-import './ShopComponent.scss';
-import data from '../../data.json';
+
 import ShopItemForm from "../ShopItemForm/ShopItemForm";
 import ShopItemTable from "../ShopItemTable/ShopItemTable";
 import ShopItemDisplayed from "../ShopItemDisplayed/ShopItemDisplayed";
+import NoData from "../NoData/NoData";
+
+import data from '../../data.json';
+import './ShopComponent.scss';
 
 // Главный комонент, который подключает другие необходимые компоненты, а также рендерит таблицу.
-// В данном случае пропсов не получает, список товаров получает прямо из файла.
+// В данном случае пропсов не получает, список товаров подгружается прямо из файла.
 class ShopComponent extends React.Component {
 
     constructor(props) {
@@ -55,12 +58,12 @@ class ShopComponent extends React.Component {
     cbEditItem = item => {
         this.setState(prevState => {
             const newList = prevState.list.map(v => {
-                if(+v.id === +item.id) return item;
+                if(+v.id === +item.id) return item; // Заменяем старый товар на новый
                 return v;
             });
             return {
                 list: [...newList],
-                selected: item.id,
+                selected: item.id, // После сохранения сразу же открываем отображение товара
                 action: 'show'
             }
         })
@@ -73,13 +76,14 @@ class ShopComponent extends React.Component {
     renderRightSide = () => {
         const {selected, action, list} = this.state;
         if(selected > 0){
+            const currentItem = list.find(item => item.id === selected);
             if(action === 'show'){
                 return <ShopItemDisplayed
-                    item={list.find(item => item.id === selected)}
+                    item={currentItem}
                     callback={this.cbSelectItem}
                 />
             }else if(action === 'edit' || action === 'lockedEdit'){
-                return <ShopItemForm item={list.find(item => item.id === selected)}
+                return <ShopItemForm item={currentItem}
                                      action={action}
                                      onSubmit={this.cbEditItem}
                                      callback={this.cbSelectItem}
@@ -91,6 +95,8 @@ class ShopComponent extends React.Component {
                                      onSubmit={this.cbAddItem}
                                      callback={this.cbSelectItem}
                 />
+            }else {
+                return <NoData text="Выберите необходимый товар для отображения информации"/>;
             }
         }
     }
@@ -98,14 +104,13 @@ class ShopComponent extends React.Component {
     render() {
 
         const {list, action, selected} = this.state;
-        console.log(action, selected);
 
         let htmlShopItems = [];
         if(list.length > 0){
             htmlShopItems = list.map(item => {
                 return <ShopItemTable key={'shopItem'+item.id}
                                       item={item}
-                                      locked={action === 'lockedEdit'}
+                                      isLocked={action === 'lockedEdit'}
                                       isSelected={+item.id === +this.state.selected}
                                       onSelect={this.cbSelectItem}
                                       onRemove={this.cbRemoveItem}
@@ -113,9 +118,7 @@ class ShopComponent extends React.Component {
                 />
             })
         }else{
-            htmlShopItems.push(
-                React.createElement(NoData, {key: 'noShopItemsData'})
-            )
+            htmlShopItems = <NoData text="Не представлены данные для отображения"/>;
         }
 
 

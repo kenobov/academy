@@ -3,9 +3,9 @@ import './ShopItemDisplayed.scss';
 
 // Это хардкор для изображений, который в базе хранились бы абсолютными путями на сервер
 import image from '../../assets/img/item1.jpg';
+import PropTypes from "prop-types";
 
 export default class ShopItemDisplayed extends React.Component {
-
 
     render() {
         const {item, callback} = this.props;
@@ -53,4 +53,9 @@ export default class ShopItemDisplayed extends React.Component {
 
     }
 
+}
+
+ShopItemDisplayed.propTypes = {
+    item: PropTypes.object.isRequired,
+    callback: PropTypes.func.isRequired
 }

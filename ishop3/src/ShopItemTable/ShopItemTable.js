@@ -1,10 +1,11 @@
 import React from 'react';
 import './ShopItemTable.scss';
+import PropTypes from "prop-types";
 
 export default class ShopItemTable extends React.Component {
 
     cbMark = () => {
-        if(!this.props.locked) {
+        if(!this.props.isLocked) {
             this.props.isSelected
                 ? this.props.onSelect(0, 'none') // Если выбран данный товар, вторым кликом снимаем выделение
                 : this.props.onSelect(this.props.item.id, 'show')
@@ -13,7 +14,7 @@ export default class ShopItemTable extends React.Component {
 
     cbEdit = e => {
         e.stopPropagation();
-        this.props.onSelect(this.props.item.id, 'edit');
+        this.props.onSelect(this.props.item.id, 'edit'); // Переход в режим редактирования
     }
 
     cbRemove = e => {
@@ -23,7 +24,7 @@ export default class ShopItemTable extends React.Component {
     }
 
     render() {
-        const {item, locked} = this.props;
+        const {item, isLocked} = this.props;
         const {id, name, img, price, store, isNew, isPopular} = item;
 
         return (
@@ -41,7 +42,7 @@ export default class ShopItemTable extends React.Component {
                     <button className="edit"
                             type="button"
                             onClick={this.cbEdit}
-                            disabled={locked}
+                            disabled={isLocked}
                     >
                         Редактировать
                     </button>
@@ -50,7 +51,7 @@ export default class ShopItemTable extends React.Component {
                     <button className="remove"
                             type="button"
                             onClick={this.cbRemove}
-                            disabled={locked}
+                            disabled={isLocked}
                     >
                         Удалить
                     </button>
@@ -59,4 +60,12 @@ export default class ShopItemTable extends React.Component {
         )
     }
 
+}
+
+ShopItemTable.propTypes = {
+    item: PropTypes.object,
+    isLocked: PropTypes.bool.isRequired,
+    isSelected: PropTypes.bool.isRequired,
+    onSelect: PropTypes.func.isRequired,
+    onRemove: PropTypes.func.isRequired
 }
