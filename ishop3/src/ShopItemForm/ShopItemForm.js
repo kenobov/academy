@@ -65,7 +65,7 @@ export default class ShopItemFrom extends React.Component {
                     [e.target.name]: Boolean(e.target.checked)
                 }
             }
-        });
+        }, this.validateForm);
 
         if(this.props.action !== 'lockedEdit' && this.state.item.id){
             this.props.callback(this.state.item.id, 'lockedEdit'); // Если внесли изменения, блокируем форму
