@@ -1,8 +1,14 @@
 .ShopItem {
 
+  &.edited {
+    background: #bac1ff;
+  }
+
   &.marked {
     background: #ffbaba;
+  }
 
+  &.marked, &.edited{
     .remove, .edit {
       color: #999;
       border-color: #999;
@@ -12,7 +18,7 @@
   &:hover {
     cursor: pointer;
   }
-  &:not(.marked):hover {
+  &:not(.edited):not(.marked):hover {
     background: #e8edff;
   }
 

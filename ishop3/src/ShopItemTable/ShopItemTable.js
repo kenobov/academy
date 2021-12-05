@@ -24,11 +24,14 @@ export default class ShopItemTable extends React.Component {
     }
 
     render() {
-        const {item, isLocked} = this.props;
+        const {item, action} = this.props;
         const {id, name, img, price, store, isNew, isPopular} = item;
 
+        const style = this.props.isSelected
+                    ? action === 'lockedEdit' || action === 'edit'  ? 'edited' : 'marked' : '';
+
         return (
-            <tr className={`ShopItem ${this.props.isSelected ? 'marked' : null }`}
+            <tr className={`ShopItem ${style}`}
                 onClick={this.cbMark}
             >
                 <td>{id}</td>
@@ -42,7 +45,7 @@ export default class ShopItemTable extends React.Component {
                     <button className="edit"
                             type="button"
                             onClick={this.cbEdit}
-                            disabled={isLocked}
+                            disabled={action === 'lockedEdit'}
                     >
                         Редактировать
                     </button>
@@ -51,7 +54,7 @@ export default class ShopItemTable extends React.Component {
                     <button className="remove"
                             type="button"
                             onClick={this.cbRemove}
-                            disabled={isLocked}
+                            disabled={action === 'lockedEdit'}
                     >
                         Удалить
                     </button>
@@ -64,7 +67,7 @@ export default class ShopItemTable extends React.Component {
 
 ShopItemTable.propTypes = {
     item: PropTypes.object,
-    isLocked: PropTypes.bool.isRequired,
+    action: PropTypes.string.isRequired,
     isSelected: PropTypes.bool.isRequired,
     onSelect: PropTypes.func.isRequired,
     onRemove: PropTypes.func.isRequired

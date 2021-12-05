@@ -110,7 +110,7 @@ class ShopComponent extends React.Component {
             htmlShopItems = list.map(item => {
                 return <ShopItemTable key={'shopItem'+item.id}
                                       item={item}
-                                      isLocked={action === 'lockedEdit'}
+                                      action={action}
                                       isSelected={+item.id === +this.state.selected}
                                       onSelect={this.cbSelectItem}
                                       onRemove={this.cbRemoveItem}
