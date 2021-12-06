@@ -2,7 +2,7 @@ import React from 'react';
 import './ShopItemDisplayed.scss';
 
 // Это хардкор для изображений, который в базе хранились бы абсолютными путями на сервер
-import image from '../../assets/img/item1.jpg';
+// import image from '../../assets/img/item1.jpg';
 import PropTypes from "prop-types";
 
 export default class ShopItemDisplayed extends React.Component {
@@ -23,7 +23,7 @@ export default class ShopItemDisplayed extends React.Component {
             <div className="ShopItemDisplayed">
                 <div className="Badges">{htmlBadges}</div>
                 <div className="Image">
-                    <img src={image} alt="name" />
+                    <img src={"/"+img} alt="name" />
                 </div>
                 <div className="Name">
                     <h3>
