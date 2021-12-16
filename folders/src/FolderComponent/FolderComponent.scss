@@ -1,0 +1,60 @@
+.FolderComponent {
+  width: 100%;
+
+  .folder {
+
+    .name {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      cursor: pointer;
+
+      &.active {
+        background: #f3f3f3;
+      }
+
+      &:not(.active):hover {
+        background: #e0e0e0;
+      }
+
+      .opener, .image {
+        width: 25px;
+        height: 25px;
+        padding: 5px;
+        margin: 0 5px;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .image {
+        margin-right: 10px;
+      }
+
+      .opener {
+        width: 12px;
+        height: 12px;
+        opacity: .5;
+        transform: rotate(-90deg);
+        transition: transform .1s ease;
+
+        &.opened {
+          transform: rotate(0deg);
+          transition: transform .1s ease;
+        }
+      }
+
+    }
+
+  }
+
+  > .children {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+}
