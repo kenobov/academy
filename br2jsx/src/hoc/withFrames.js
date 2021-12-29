@@ -3,15 +3,18 @@ import React from 'react';
 const withFrames = colors => Comp => {
 
     return (props) => {
-        const color = colors.shift();
+        const array = [...colors];
 
-        const Html = withFrames(colors)(Comp);
+        const renderFrame = (colors) => {
+            const color = colors.shift();
+            return color
+                ?<div style={{display: "inline-block", border: `2px solid ${color}`, padding: "5px"}}>
+                    { renderFrame(colors) }
+                </div>
+                : <Comp {...props}/>
+        }
 
-        return color
-            ? <div style={{display: "inline-block", border: `2px solid ${color}`, padding: "5px"}}>
-                <Html {...props}/>
-            </div>
-            : <Comp {...props}/>
+        return renderFrame(array)
     }
 
 }
