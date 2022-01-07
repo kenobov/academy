@@ -30,7 +30,220 @@ Array [
       <button
         aria-label={null}
         className="btn btn-secondary"
-        id="filterClockedClients"
+        id="filterBlockedClients"
+        onClick={[Function]}
+        type="button"
+      >
+        Заблокированные
+      </button>
+    </div>
+    <a
+      onClick={[Function]}
+    >
+      <button
+        aria-label={null}
+        className="btn btn-success btn-sm"
+        onClick={[Function]}
+      >
+        Добавить клиента
+      </button>
+    </a>
+  </div>,
+  <div
+    className="Loader"
+  >
+    <div
+      className="LoaderContent"
+    >
+      <div
+        className="mt-5 mb-5 spinner-border text-primary"
+        role="status"
+      >
+        <span
+          className="visually-hidden"
+        >
+          Loading...
+        </span>
+      </div>
+      Подождите, идет загрузка
+    </div>
+  </div>,
+]
+`;
+
+exports[`Проверка фильтрации клиентов 2`] = `
+Array [
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div
+      className="btn-group"
+      role="group"
+    >
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        id="filterAllClients"
+        onClick={[Function]}
+        type="button"
+      >
+        Все
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-primary"
+        id="filterActiveClients"
+        onClick={[Function]}
+        type="button"
+      >
+        Активные
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        id="filterBlockedClients"
+        onClick={[Function]}
+        type="button"
+      >
+        Заблокированные
+      </button>
+    </div>
+    <a
+      onClick={[Function]}
+    >
+      <button
+        aria-label={null}
+        className="btn btn-success btn-sm"
+        onClick={[Function]}
+      >
+        Добавить клиента
+      </button>
+    </a>
+  </div>,
+  <div
+    className="Loader"
+  >
+    <div
+      className="LoaderContent"
+    >
+      <div
+        className="mt-5 mb-5 spinner-border text-primary"
+        role="status"
+      >
+        <span
+          className="visually-hidden"
+        >
+          Loading...
+        </span>
+      </div>
+      Подождите, идет загрузка
+    </div>
+  </div>,
+]
+`;
+
+exports[`Проверка фильтрации клиентов 3`] = `
+Array [
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div
+      className="btn-group"
+      role="group"
+    >
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        id="filterAllClients"
+        onClick={[Function]}
+        type="button"
+      >
+        Все
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        id="filterActiveClients"
+        onClick={[Function]}
+        type="button"
+      >
+        Активные
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-primary"
+        id="filterBlockedClients"
+        onClick={[Function]}
+        type="button"
+      >
+        Заблокированные
+      </button>
+    </div>
+    <a
+      onClick={[Function]}
+    >
+      <button
+        aria-label={null}
+        className="btn btn-success btn-sm"
+        onClick={[Function]}
+      >
+        Добавить клиента
+      </button>
+    </a>
+  </div>,
+  <div
+    className="Loader"
+  >
+    <div
+      className="LoaderContent"
+    >
+      <div
+        className="mt-5 mb-5 spinner-border text-primary"
+        role="status"
+      >
+        <span
+          className="visually-hidden"
+        >
+          Loading...
+        </span>
+      </div>
+      Подождите, идет загрузка
+    </div>
+  </div>,
+]
+`;
+
+exports[`Проверка фильтрации клиентов 4`] = `
+Array [
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div
+      className="btn-group"
+      role="group"
+    >
+      <button
+        aria-label={null}
+        className="btn btn-primary"
+        id="filterAllClients"
+        onClick={[Function]}
+        type="button"
+      >
+        Все
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        id="filterActiveClients"
+        onClick={[Function]}
+        type="button"
+      >
+        Активные
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        id="filterBlockedClients"
         onClick={[Function]}
         type="button"
       >

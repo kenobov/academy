@@ -12,27 +12,29 @@ test('Проверка фильтрации клиентов', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 
-    const filterActiveClientsButton = component.root.find(el => el.id === '#filterBlockedClients');
+    const filterActiveClientsButton = component.root.find(
+        el => el.props.id === 'filterActiveClients'
+    );
     filterActiveClientsButton.props.onClick();
 
     tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 
-    // const filterBlockedClientsButton = componentTree.root.find(
-    //     el => el.getAttribute("id") === 'filterBlockedClients'
-    // );
-    // filterBlockedClientsButton.props.onClick();
+    const filterBlockedClientsButton = component.root.find(
+        el => el.props.id === 'filterBlockedClients'
+    );
+    filterBlockedClientsButton.props.onClick();
 
-    // componentTree = component.toJSON();
-    // expect(component).toMatchSnapshot();
-    //
-    // const filterAllClientsButton = componentTree.root.find(
-    //     el => el.getAttribute("id") === 'filterAllClients'
-    // );
-    // filterAllClientsButton.props.onClick();
-    //
-    // componentTree = component.toJSON();
-    // expect(component).toMatchSnapshot();
+    tree = component.toJSON();
+    expect(component).toMatchSnapshot();
+
+    const filterAllClientsButton = component.root.find(
+        el => el.props.id === 'filterAllClients'
+    );
+    filterAllClientsButton.props.onClick();
+
+    tree = component.toJSON();
+    expect(component).toMatchSnapshot();
 
 
 });
