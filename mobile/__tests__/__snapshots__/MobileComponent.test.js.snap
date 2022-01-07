@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Проверка фильтрации клиентов 1`] = `
+Array [
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div
+      className="btn-group"
+      role="group"
+    >
+      <button
+        aria-label={null}
+        className="btn btn-primary"
+        id="filterAllClients"
+        onClick={[Function]}
+        type="button"
+      >
+        Все
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        id="filterActiveClients"
+        onClick={[Function]}
+        type="button"
+      >
+        Активные
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        id="filterClockedClients"
+        onClick={[Function]}
+        type="button"
+      >
+        Заблокированные
+      </button>
+    </div>
+    <a
+      onClick={[Function]}
+    >
+      <button
+        aria-label={null}
+        className="btn btn-success btn-sm"
+        onClick={[Function]}
+      >
+        Добавить клиента
+      </button>
+    </a>
+  </div>,
+  <div
+    className="Loader"
+  >
+    <div
+      className="LoaderContent"
+    >
+      <div
+        className="mt-5 mb-5 spinner-border text-primary"
+        role="status"
+      >
+        <span
+          className="visually-hidden"
+        >
+          Loading...
+        </span>
+      </div>
+      Подождите, идет загрузка
+    </div>
+  </div>,
+]
+`;

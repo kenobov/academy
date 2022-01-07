@@ -1,4 +1,7 @@
 import React from 'react';
+import {ApiServiceProvider} from "../context/ApiServiceContext";
+import ApiService from "../services/ApiService";
+
 import MobileTableComponent from "../MobileTableComponent/MobileTableComponent";
 import MobileFilterComponent from "../MobileFilterComponent/MobileFilterComponent";
 import {Button} from "reactstrap";
@@ -17,13 +20,13 @@ class MobileComponent extends React.PureComponent {
         const ModalOpener = inModal({title:'Редактирование клиента'})(ModalButton)(MobileFormComponent);
 
         return (
-            <>
+            <ApiServiceProvider value={new ApiService}>
                 <div className={"card-body d-flex justify-content-between"}>
                     <MobileFilterComponent />
                     <ModalOpener initClient={initClient}/>
                 </div>
                 <MobileTableComponent />
-            </>
+            </ApiServiceProvider>
         )
     }
 

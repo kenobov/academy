@@ -20,14 +20,17 @@ export default class MobileFilterComponent extends React.PureComponent {
         return (
             <ButtonGroup>
                 <Button onClick={() => this.onFilter('all')}
+                        id="filterAllClients"
                         color={current === 'all' ? "primary" : 'secondary'}>
                     Все
                 </Button>
                 <Button onClick={() => this.onFilter('active')}
+                        id="filterActiveClients"
                         color={current === 'active' ? "primary" : 'secondary'}>
                     Активные
                 </Button>
                 <Button onClick={() => this.onFilter('blocked')}
+                        id="filterClockedClients"
                         color={current === 'blocked' ? "primary" : 'secondary'}>
                     Заблокированные
                 </Button>

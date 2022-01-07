@@ -3,7 +3,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV == 'production';
 
 
 const stylesHandler = 'style-loader';
@@ -55,6 +55,8 @@ const config = {
 module.exports = () => {
     if (isProduction) {
         config.mode = 'production';
+
+
     } else {
         config.mode = 'development';
     }
