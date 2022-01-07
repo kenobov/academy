@@ -4,7 +4,6 @@
   "description": "стартовый проект на React",
   "main": "App.js",
   "scripts": {
-    "start": "browser-sync start --server \"src\" --files \"src/**\"",
     "builddev": "cross-env NODE_ENV=development .//node_modules//.bin//webpack-dev-server --progress --colors --history-api-fallback",
     "buildprod": "cross-env NODE_ENV=production .//node_modules//.bin//webpack --progress",
     "browse": ".\\node_modules\\.bin\\lite-server",
@@ -37,13 +36,11 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
-    "bootstrap": "^5.1.3",
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-router-dom": "^4.2.2",
-    "reactstrap": "^9.0.1"
+    "react-router-dom": "^4.2.2"
   },
   "jest": {
     "moduleNameMapper": {
