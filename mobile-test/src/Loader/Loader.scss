@@ -1,0 +1,12 @@
+.Loader {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+
+  .LoaderContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

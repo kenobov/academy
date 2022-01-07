@@ -1,0 +1,49 @@
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700;800&display=swap';
+
+$colorInfo: #358edc;
+$colorSuccess: #35dc80;
+$colorDanger: #dc3545;
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  min-width: 300px;
+  min-height: 100vh;
+  background: #eaeaea;
+}
+
+#mobile {
+  height: 100vh;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  thead {
+    background-color: #e7e7e7;
+    border-bottom: #d4d4d4;
+  }
+  th {
+    color: #383838;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  td {
+    color: #669;
+    padding: 10px 15px;
+  }
+
+  >:not(:first-child) {
+    border-top-color: #d4d4d4 !important;
+  }
+
+}
+
+button[disabled=disabled], button:disabled {
+  cursor: not-allowed;
+}
+
+.pointer:hover {
+  cursor: pointer;
+}
