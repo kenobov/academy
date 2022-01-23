@@ -1,10 +1,14 @@
-class Product {
+interface IScalable {
+    getName:() => string
+    getScale:() => number
+}
 
-    public name:string;
-    public scale:number;
+class Apple implements IScalable {
 
-    constructor(_name:string, _scale:number) {
-        this.name = _name;
+    private readonly name:string = 'Apple';
+    private readonly scale:number = 0;
+
+    constructor(_scale:number) {
         this.scale = _scale;
     }
 
@@ -18,18 +22,21 @@ class Product {
 
 }
 
-class Apple extends Product {
+class Tomato implements IScalable {
+
+    private readonly name:string = 'Tomato';
+    private readonly scale:number;
 
     constructor(_scale:number) {
-        super('Apple', _scale);
+        this.scale = _scale;
     }
 
-}
+    public getName = ():string => {
+        return this.name;
+    }
 
-class Tomato extends Product {
-
-    constructor(_scale:number) {
-        super('Tomato', _scale);
+    public getScale = ():number => {
+        return this.scale
     }
 
 }
@@ -37,18 +44,18 @@ class Tomato extends Product {
 
 class Scale {
 
-    protected products:Product[] = [];
+    protected products:IScalable[] = [];
 
-    public add = (product:Product):void => {
+    public add = (product:IScalable):void => {
         this.products.push(product)
     }
 
     public getSumScale = ():void => {
-        console.log(this.products.reduce((acc:number, item: Product) => acc + item.getScale(), 0))
+        console.log(this.products.reduce((acc:number, item: IScalable) => acc + item.getScale(), 0))
     }
 
     public getNameList = ():void => {
-        console.log(this.products.map((item:Product) => item.getName()))
+        console.log(this.products.map((item:IScalable) => item.getName()))
     }
 
 }
