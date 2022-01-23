@@ -2,6 +2,7 @@ var Apple = /** @class */ (function () {
     function Apple(_scale) {
         var _this = this;
         this.name = 'Apple';
+        this.scale = 0;
         this.getName = function () {
             return _this.name;
         };
@@ -48,4 +49,3 @@ SCALES.add(new Tomato(75));
 SCALES.add(new Apple(40));
 SCALES.getSumScale();
 SCALES.getNameList();
-//# sourceMappingURL=app.js.map
